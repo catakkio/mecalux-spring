@@ -2,8 +2,6 @@ package com.mecalux.controller;
 
 import com.mecalux.model.Direccion;
 import com.mecalux.model.User;
-import javassist.tools.web.BadHttpRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,82 +15,30 @@ import java.util.List;
 public abstract class UserController {
 
     // USER APIs
+    @GetMapping("/users")
+    public abstract ResponseEntity getUsers();
 
-    /**
-     * @param id of the user
-     * @return the requested user
-     */
     @GetMapping("/user/{id}")
-    ResponseEntity getUserById(@PathVariable String id) throws BadHttpRequest{
-        //TODO: implement the logic to retrieve the user
-        return new ResponseEntity("Retrieved user with id:"+id,HttpStatus.OK) ;
-    }
+    public abstract ResponseEntity getUserById(@PathVariable String id);
 
-    /**
-     *
-     * @param user to add to the DB
-     * @return  the user that has been added to the DB into a ResponseEntity obj
-     */
     @PostMapping("/user")
-    public ResponseEntity addUser (@RequestBody User user) {
-        //TODO: implement the logic to add the user to the DB
-        return new ResponseEntity(user, HttpStatus.OK);
-    }
+    public abstract ResponseEntity addUser (@RequestBody User user);
 
-    /**
-     *
-     * @param id of the user to remove from the DB
-     * @return a confirmation message
-     */
     @DeleteMapping("/user/{id}")
-    public ResponseEntity deleteUser(@PathVariable String id){
-        //TODO: implement logic to remove the user from the DB
-        return new ResponseEntity("Deleted user with id:"+id,HttpStatus.OK) ;
-    }
-
-    // Depending on the scope of the application also an endpoint to retrieve all the user could be implemented
-
+    public abstract ResponseEntity deleteUser(@PathVariable String id);
 
     // NAME APIs
-
-    /**
-     *
-     * @param id of the user whose name is to be retrieved
-     * @return the user's name
-     */
     @GetMapping("/userName/{id}")
-    ResponseEntity getUserNameById(@PathVariable String id) {
-        String name = "test";  //TODO: implement the logic to retrieve the user name
-        return new ResponseEntity(name,HttpStatus.OK) ;
-    }
+    public abstract ResponseEntity getUserNameById(@PathVariable String id);
 
-    /**
-     *
-     * @param id of the user whose name is to be changed
-     * @param name to set for the user
-     * @return the new user's name
-     */
     @PatchMapping ("/userName/{id}")
-    public ResponseEntity updateUserName(@PathVariable String id,@RequestBody String name)  {
-        //TODO: implement logic to update the user name
-        return new ResponseEntity("New user name:"+name,HttpStatus.OK) ;
-    }
+    public abstract ResponseEntity updateUserName(@PathVariable String id,@RequestBody String name);
 
     // DIRECCIONS APIs
-
     @GetMapping("user/{id}")
     public abstract ResponseEntity getUserDireccions(@PathVariable String id);
 
-    /**˙
-     *
-     * @param id of the user to update
-     * @param direccions direccions to store in the user entity
-     * @return a confirmation message
-     */
     @PatchMapping("user/{id}")
-    public ResponseEntity updateUserDireccions(@PathVariable String id,@RequestBody List<Direccion> direccions) {
-        //TODO: implement logic to update the user direccions
-        return new ResponseEntity("Updated direccions of user with id:"+id,HttpStatus.OK) ;
-    }
+    public abstract ResponseEntity updateUserDireccions(@PathVariable String id,@RequestBody List<Direccion> direccions);
 
 }
