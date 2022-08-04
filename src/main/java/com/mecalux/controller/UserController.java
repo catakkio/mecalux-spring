@@ -22,7 +22,7 @@ public abstract class UserController {
     public abstract ResponseEntity getUserById(@PathVariable String id);
 
     @PostMapping("/user")
-    public abstract ResponseEntity addUser (@RequestBody User user);
+    public abstract ResponseEntity addUser(@RequestBody User user);
 
     @DeleteMapping("/user/{id}")
     public abstract ResponseEntity deleteUser(@PathVariable String id);
