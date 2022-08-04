@@ -1,10 +1,14 @@
 package com.mecalux.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * TODO: 3. Utilizar anotaciones JPA para modelar las entidades del package com.mecalux.model
  * */
+@Entity
 public class Direccion {
-
+    @Id
     private Long id;
 
     private String direccion;
