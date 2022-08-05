@@ -1,5 +1,7 @@
 package com.mecalux.service;
 
+import java.util.Date;
+
 /**
  * Created by JCastillo on 01/03/2017.
  */
@@ -20,4 +22,13 @@ public class Testeable {
 		}
 		return "NOT_VALID";
 	}
+
+	/**
+	 * Proposed solution for the 7th point of the technical test:
+	 */
+	    public String method() {
+        String ret = this.metodo1("TEST");
+        Date date = new Date();
+        return ret + "_" + date.getTime();
+    }
 }
