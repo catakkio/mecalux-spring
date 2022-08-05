@@ -25,6 +25,8 @@ public class Testeable {
 
 	/**
 	 * Proposed solution for the 7th point of the technical test:
+	 * Move here the method function.
+	 * More details about it in com.mecalux.service.NeedHelpServiceImpl.java file
 	 */
 	    public String method() {
         String ret = this.metodo1("TEST");

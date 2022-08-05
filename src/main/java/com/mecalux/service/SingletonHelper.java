@@ -7,7 +7,6 @@ import java.util.UUID;
  */
 public class SingletonHelper {
     private static SingletonHelper instance;
-    private static int id=0;
 
     private SingletonHelper(){}; // we made the constructor not accessible
     public static SingletonHelper getInstance() {
@@ -15,10 +14,6 @@ public class SingletonHelper {
             instance = new SingletonHelper();
         }
         return instance;
-    }
-
-    public int getIncrementalRandomId(){
-        return id++;
     }
 
     public String getRandomId(){
