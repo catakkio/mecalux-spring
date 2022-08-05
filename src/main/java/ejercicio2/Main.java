@@ -21,10 +21,6 @@ public class Main {
         printProductCombinations();
     }
 
-    // Expected result: 3^6 = 729 records
-    // I thought we were talking about combinations more than permutations because we have 6 spaces to fill.
-    // We would have had a permutation if we had 3 spaces to fill
-
     /**
      *
      *  I thought we were talking about combinations more than permutations because we have 6 spaces to fill.
@@ -39,6 +35,8 @@ public class Main {
 
         int prodLength  = 3;
         int a, b, c, d, e, f; // indexes for each character of the string to compose
+
+        //we fill each position with all the possibile values
         for (a = 0; a < prodLength ; a++) {
             for (b = 0; b < prodLength ; b++) {
                 for (c = 0; c < prodLength ; c++) {
